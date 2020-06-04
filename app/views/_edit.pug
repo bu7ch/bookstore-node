@@ -1,0 +1,11 @@
+extends layout
+block content
+  h4 Editer un livre
+  .form-group
+  form(action=`/books/${book.id}`, method="post")
+    input.form-input(type="text", name="titre", value=`${book.titre}` placeholder=`${book.titre}`)
+    input.form-input(type="text", name="auteur", value=`${book.auteur}` placeholder=`${book.auteur}`)
+    input.form-input(type="number", name="date_publication", value=`${book.date_publication}` placeholder=`${book.date_publication}`)
+    input.form-input(type="number", name="pages", value=`${book.pages}` placeholder=`${book.pages}`)
+    button.btn.btn-primary.input-group-btn(type="submit") mettre à jour
+    a.btn.btn-primary(href="/books") retour

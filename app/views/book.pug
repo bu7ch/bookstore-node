@@ -1,0 +1,10 @@
+extends layout
+block content
+  h3 Livre
+  .card
+    .card-body
+      p= book.titre
+      p= book.auteur
+      p= book.date_publication
+      p= book.pages
+  a.btn.btn-primary(href="/books") retour

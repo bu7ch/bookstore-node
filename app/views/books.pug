@@ -1,19 +1,26 @@
 extends layout
 block content
   h1 MES LIVRES
+  a.btn.btn-primary#green(href="/books/new") ajouter
   each book in books
-    .card
-      .card-image
-        img.img-responsive(src='https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80')
-    .card-header
-      .card-title.h5= book.titre
-      .card-subtitle.text-gray ...
-    .card-body
-    = book.auteur
-    br
-    = book.date_publication
-    .card-footer
-      button.btn.btn-primary edit
+    a(href=`/books/${book.id}`)
+      .container
+        .columns
+          .column.col-6.col-mx-auto
+            .card
+              .card-image
+                img.img-responsive(src='https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80')
+            .card-header
+              .card-title.h5= book.titre
+            .card-body
+            = book.auteur
+            br
+            = book.date_publication
+            .card-footer
+              a.btn.btn-primary(href=`/books/${book.id}/edit`) edit
+              a.btn.btn-primary(href=`/books/${book.id}/delete`) delete
+        
+      
 
 
     

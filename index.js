@@ -26,13 +26,17 @@ app.get('/', (req, res) => {
 })
 app.route('/books')
   .get(controller.getBooks)
+app.route('/books/new')
+  .get(controller.formBook)
   .post(controller.postBook)
 
 app.route('/books/:id')
   .get(controller.getBook)
-  .put(controller.updateBook)
-  .delete(controller.deleteBook)
-
+  .post(controller.updateBook)
+app.route('/books/:id/edit')
+  .get(controller.editBook)
+app.route('/books/:id/delete')
+  .get(controller.deleteBook)
 
 app.listen(port, ()=>{
   console.log(`[ 💥 Server is running on port ${port}]`);

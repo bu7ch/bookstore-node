@@ -2,6 +2,9 @@ body {
   background-color: white;
 }
 img {
-  height: 100px;
-  width: 100px;
+  width: 100%;
+}
+
+#green {
+  background-color:green;
 }
